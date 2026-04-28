@@ -1,10 +1,11 @@
-import { Tech } from "../types/tech";
+  import { Tech } from "../types/tech";
 
-export const languages: Tech[] = [
-  { name: "Java", icon: "https://cdn.simpleicons.org/openjdk", color: "#007396", type: "language" },
-  { name: "Python", icon: "https://cdn.simpleicons.org/python", color: "#3776AB", type: "language" },
-  { name: "SQL", icon: "https://cdn.simpleicons.org/mysql", color: "#4479A1", type: "language" },
-];
+  export const languages: Tech[] = [
+    { name: "Java", icon: "https://cdn.simpleicons.org/openjdk", color: "#007396", type: "language" },
+    { name: "Python", icon: "https://cdn.simpleicons.org/python", color: "#3776AB", type: "language" },
+    { name: "SQL", icon: "https://cdn.simpleicons.org/mysql", color: "#4479A1", type: "language" },
+    { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript", color: "#3178C6", type: "language"},
+  ];
 
 export const frameworks: Tech[] = [
   { name: "Angular", icon: "https://cdn.simpleicons.org/angular", color: "#DD0031", type: "framework" },
