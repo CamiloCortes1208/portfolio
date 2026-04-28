@@ -23,4 +23,4 @@ Este es mi portafolio profesional desarrollado con Next.js y desplegado en Verce
 ## Demo en vivo
 
 El proyecto está desplegado en Vercel:  
-](https://portfolio-mvor.vercel.app/
+https://portfolio-mvor.vercel.app/
