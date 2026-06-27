@@ -11,13 +11,19 @@ export type Tech =
   | "Python"
   | "MongoDB"
   | "Java"
-  | "PostgreSQL";
+  | "PostgreSQL"
+  | "Spring Boot";
+
+
+export type ProjectLink = {
+  label: string;
+  url: string;
+};
 
 export type ProjectDTO = BaseProject & {
   description: string;
   tech: Tech[];
   image: string;
-  github: string;
-  demo?: string;
   featured?: boolean;
+  links?: ProjectLink[];
 };

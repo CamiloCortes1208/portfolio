@@ -13,6 +13,21 @@ interface Props {
 
 export default function ProjectCard({ project, variant = "default" }: Props) {
 
+  const renderLinks = () => {
+    return project.links?.map((link) => (
+      <a
+        key={link.url}
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm px-3 py-1.5 rounded-lg border border-gray-200 
+        text-gray-700 hover:bg-gray-100 transition"
+      >
+        {link.label}
+      </a>
+    ));
+  };
+
   // EXTENDED VARIANT
   if (variant === "extended") {
     return (
@@ -54,29 +69,7 @@ export default function ProjectCard({ project, variant = "default" }: Props) {
             </div>
 
             <div className="flex gap-3 mt-auto">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm rounded-lg border border-gray-200 
-            text-gray-700 hover:bg-gray-100 transition"
-                >
-                  GitHub
-                </a>
-              )}
-
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm rounded-lg bg-black text-white 
-                hover:bg-gray-800 transition"
-                >
-                  Demo
-                </a>
-              )}
+              {renderLinks()}
             </div>
 
           </div>
@@ -88,8 +81,8 @@ export default function ProjectCard({ project, variant = "default" }: Props) {
   // DEFAULT VARIANT
   return (
     <div className="group p-5 rounded-2xl border border-gray-200 bg-white 
-          shadow-sm hover:shadow-md hover:-translate-y-1 
-          transition-all duration-300 h-full flex flex-col">
+      shadow-sm hover:shadow-md hover:-translate-y-1 
+      transition-all duration-300 h-full flex flex-col">
 
       {/* Image */}
       <div className="relative w-full h-40 mb-4 overflow-hidden rounded-xl">
@@ -100,7 +93,6 @@ export default function ProjectCard({ project, variant = "default" }: Props) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition" />
       </div>
 
@@ -115,38 +107,14 @@ export default function ProjectCard({ project, variant = "default" }: Props) {
           {project.description}
         </DescriptiveText>
 
-        {/* Tech */}
         <div className="flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <TechBadge key={t} tech={t} />
           ))}
         </div>
 
-        {/* Links */}
         <div className="flex gap-3 mt-auto pt-2">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm px-3 py-1.5 rounded-lg border border-gray-200 
-            text-gray-700 hover:bg-gray-100 transition"
-            >
-              GitHub
-            </a>
-          )}
-
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm px-3 py-1.5 rounded-lg bg-black text-white 
-            hover:bg-gray-800 transition"
-            >
-              Demo
-            </a>
-          )}
+          {renderLinks()}
         </div>
 
       </div>
